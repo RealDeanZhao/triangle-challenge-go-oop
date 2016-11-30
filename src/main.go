@@ -33,25 +33,33 @@ func main() {
 	validator := libs.TriangleValidator{
 		UserInput: input,
 	}
-	isValid := validator.Validate()
+	isValid := validate(&validator)
 	fmt.Println("Is it a valid triangle?:", isValid)
 	if isValid {
 		equilateralChecker := libs.EquilateralChecker{
 			UserInput: input,
 		}
-		isEquilateral := equilateralChecker.Check()
+		isEquilateral := checkType(&equilateralChecker)
 		fmt.Println("Is it a Equilateral?:", isEquilateral)
 
 		isoscelesChecker := libs.IsoscelesChecker{
 			UserInput: input,
 		}
-		isIsosceles := isoscelesChecker.Check()
+		isIsosceles := checkType(&isoscelesChecker)
 		fmt.Println("Is it a Isosceles?:", isIsosceles)
 
 		scaleneChecker := libs.ScaleneChecker{
 			UserInput: input,
 		}
-		isScalene := scaleneChecker.Check()
+		isScalene := checkType(&scaleneChecker)
 		fmt.Println("Is it a Scalene?:", isScalene)
 	}
+}
+
+func checkType(checker libs.ITypeChecker) bool {
+	return checker.Check()
+}
+
+func validate(validator libs.ITriangleValidator) bool {
+	return validator.Validate()
 }
