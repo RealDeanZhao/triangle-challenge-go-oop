@@ -30,7 +30,7 @@ func convertUserInput(a string, b string, c string) libs.UserInput {
 
 func main() {
 	input := convertUserInput(os.Args[1], os.Args[2], os.Args[3])
-	validator := libs.Validator{
+	validator := libs.TriangleValidator{
 		UserInput: input,
 	}
 	isValid := validator.Validate()

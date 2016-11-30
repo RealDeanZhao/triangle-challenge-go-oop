@@ -1,7 +1,7 @@
 package libs
 
-// TypeChecker is used to check the type by the UserInput
-type TypeChecker interface {
+// ITypeChecker is used to check the type by the UserInput
+type ITypeChecker interface {
 	Check() bool
 }
 

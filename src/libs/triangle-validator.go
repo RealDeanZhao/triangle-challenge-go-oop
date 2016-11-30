@@ -1,17 +1,17 @@
 package libs
 
-// TriangleValidator validates if is a triangle
-type TriangleValidator interface {
+// ITriangleValidator validates if is a triangle
+type ITriangleValidator interface {
 	Validate() bool
 }
 
-// Validator implements TriangleValidator
-type Validator struct {
+// TriangleValidator implements ITriangleValidator
+type TriangleValidator struct {
 	UserInput UserInput
 }
 
 // Validate the input
-func (v *Validator) Validate() bool {
+func (v *TriangleValidator) Validate() bool {
 	if !allSidesArePositive(v.UserInput) {
 		return false
 	}
