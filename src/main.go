@@ -1,11 +1,12 @@
 package main
 
+// go get from github
 import (
 	"fmt"
 	"os"
 	"strconv"
 
-	libs "./libs"
+	"github.com/zestxjest/triangle-challenge-go-oop/src/libs"
 )
 
 func main() {
